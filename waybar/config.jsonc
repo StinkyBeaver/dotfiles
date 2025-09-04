@@ -1,0 +1,30 @@
+{
+  layer: "top",
+  position: "top",
+  "modules-left": [
+    "sway/workspaces",
+    "network",
+  ],
+  "modules-center": [
+    "clock",
+    "network",
+  ],
+  "modules-right": [
+    "battery",
+    "pulseaudio",
+    "tray",
+  ],
+  clock: {
+    format: "{:%a %b %d %H:%M}",
+  },
+  battery: {
+    format: "{capacity}% {icon}",
+    "format-charging": "{capacity}% \u26a1",
+    tooltip: false,
+  },
+  network: {
+    "interface": "wlan0",
+    format: "\ud83d\udcf6 {essid}",
+    "on-click": "~/.config/waybar/scripts/wifi_menu.sh",
+  },
+}
